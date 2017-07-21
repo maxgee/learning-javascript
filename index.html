@@ -1,39 +1,23 @@
 <html>
     <head>
-        <title> My First Javascript Page </title>
+        <title> My First Javasgit lcript Page </title>
     </head>
     <body>
         <script>
-            //Logical Operators
-                //AND Operator && 
-                    //true && true === true
-                    //true && false === false
-                    //false && false === false
-                //OR Operator ||
-                    //true || false ==s= true
-                    //true || true === true
-                    //false || false === false
-                // > Greater Than
-                // < Less Than
-                // >= Greater Than or Equal To
-                // <= Less Than or Equal To
-
-            // Dance Party
-            // The Dance is Succesful if # of Dancers is between 40 - 60
-            // Unless it is the weekend then there is no upper bound for # of dancers
-            var isWeekend = true;
-            var numDancers = 70;
-            var isSuccess = false;
-
-            if(numDancers >= 40 && numDancers <= 60){
-                isSuccess = true;
-            }else if(numDancers >= 40 && isWeekend === true){
-                isSuccess = true;
-            }else{
-                isSuccess = false;
+            //While loops
+            var counter = 1;
+            while(counter <= 10){
+                console.log("We're on number " + counter);
+                counter++;
             }
+            console.log("Done with loop");
 
-        console.log(isSuccess);
+            var myString = "";
+
+            while(myString !== "nanana"){
+                myString += "na";
+            }
+            console.log(myString);
         </script>
     </body>
 </html>
