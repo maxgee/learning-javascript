@@ -4,35 +4,21 @@
     </head>
     <body>
         <script>
-        // //Defines weght as 10 and calls function
-        // var dog = 10;
-        //     makeNoise("Max",dog);
-        // //Defines weight as 30 and calls function
-        // dog = 30;
-        //     makeNoise("Doug",dog);
-
-        // //Defines Function
-        // function makeNoise (name, weight){
-        //    if (weight > 20){
-        //     console.log(name + " says BARK BARK");
-        //     }else{
-        //     console.log(name + " says bark bark");
-        //     } 
-        // }
-
-        // function sum (num1, num2){
-        //     return num1 + num2;
-        // }
-
-        // var mySum = sum(1,2);
-
-        // console.log(mySum);
-        // console.log(sum(2,2));
-
-        function areaCirc(radius){
-            return Math.PI*Math.pow(radius,2);
-        }
-        console .log(areaCirc(prompt("What is the radius of the circle?")));
+        //Create funtion called sotaSum
+        //Given 2 numbers, a and b, returns their sum. Howere, if the sum is in 
+        //the range of 10...19 inclusice, are forbideen, instead just return 20.
+        //sortaSum(3,4) -> 7
+        //sortaSum(9,4) -> 20
+        //sortaSum(10,11) ->21
+         function sortaSum(num1,num2){
+             var sum = num1 + num2;
+             if(sum >= 10 && sum <= 19){
+                 return 20
+            }else{
+             return sum;
+         }
+         }
+         console.log(sortaSum(10,11));
         </script>
     </body>
 </html>
