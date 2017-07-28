@@ -4,21 +4,19 @@
     </head>
     <body>
         <script>
-        //Create funtion called sotaSum
-        //Given 2 numbers, a and b, returns their sum. Howere, if the sum is in 
-        //the range of 10...19 inclusice, are forbideen, instead just return 20.
-        //sortaSum(3,4) -> 7
-        //sortaSum(9,4) -> 20
-        //sortaSum(10,11) ->21
-         function sortaSum(num1,num2){
-             var sum = num1 + num2;
-             if(sum >= 10 && sum <= 19){
-                 return 20
+        function old35(num){
+            if(num % 3 === 0 && num % 5 === 0){
+                return false;
+            }else if(num % 3 === 0 || num % 5 === 0){
+                return true;
             }else{
-             return sum;
-         }
-         }
-         console.log(sortaSum(10,11));
+                return false;
+            }
+            
+        }
+        console.log(old35(3));
+        console.log(old35(10));
+        console.log(old35(15));
         </script>
     </body>
 </html>
