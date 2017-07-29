@@ -4,12 +4,75 @@
     </head>
     <body>
         <script>
-            function getArea(sideLength){
-                return Math.pow(sideLength,2);  
-            }
-            console.log(getArea(2));
-            console.log(getArea(3));
+            var merica = ["Red","White","Blue","Bald Eagle"];
+            console.log(merica);
+            console.log(merica.length);
+            console.log(merica[2]);
 
+            var mericaCount = 0;
+            while(mericaCount < merica.length){
+                console.log(merica[mericaCount]);
+                mericaCount++;
+            }
+
+            for(var index = 0; index < merica.length;index++){
+                console.log(index);
+                console.log(merica[index]);
+            }
+
+            var nums = [4,3,2,1];
+            for(var i = 0; i < nums.length; i++){
+                console.log(nums[i]);
+            }
+
+            function firstLastEven(myArray){
+                var firstNum = myArray[0];
+                var lastNum = myArray[myArray.length-1];
+                if(firstNum % 2 === 0 && lastNum % 2 === 0){
+                    return true
+                }
+                return false;
+            }
+            console.log(firstLastEven([3,2,1]));
+            console.log(firstLastEven([4,5,6,7,8]));
+            console.log(firstLastEven([2]));
+
+            function endsSwap(myOtherArray){
+                var firstNum = myOtherArray[0];
+                var lastNum = myOtherArray[myOtherArray.length-1];
+                myOtherArray[0] = lastNum;
+                myOtherArray[myOtherArray.length-1] = firstNum;
+                return myOtherArray
+            }
+            function endSwapMethod(myArray){
+                if(myArray.length === 1){
+                    return myArray
+                }
+                var last = myArray.pop();
+                var first = myArray.shift();
+                myArray.push(first);
+                myArray.unshift(last);
+                return myArray
+            }
+            console.log("  ");
+            console.log("endsSwap");
+            console.log(endsSwap([3,2,1]));
+            console.log(endsSwap([5,6,7,8]));
+            console.log(endsSwap([1]));
+            console.log("endsMethodSwap");
+            console.log(endSwapMethod([3,2,1]));
+            console.log(endSwapMethod([5,6,7,8]));
+            console.log(endSwapMethod([1]));
+
+
+            function addMiddle(myArray,addElement){
+                var middleNum = Math.floor(myArray.length/2);
+                myArray.splice(middleNum,0,addElement);
+                return myArray
+            }
+            console.log("Add Middle");
+            console.log(addMiddle([1,2,3,4],7));
+            console.log(addMiddle([1,3],2));
         </script>
     </body>
 </html>
