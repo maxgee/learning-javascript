@@ -4,17 +4,12 @@
     </head>
     <body>
         <script>
-            function endsWithOther(firstVal,secondVal){
-                firstToUppper = firstVal.toUpperCase();
-                secondToUpper = secondVal.toUpperCase();
-                if(firstToUppper.endsWith(secondToUpper) || secondToUpper.endsWith(firstToUppper)){
-                    return true;
-                }
-                return false;
+            function makeAbba(stringA, stringB){
+                return stringA+stringB+stringB+stringA;
             }
-            console.log(endsWithOther('yyy','HelloYyy'));
-            console.log(endsWithOther('HelloYyy','Yyy'));
-            console.log(endsWithOther('Zzzy','Helloxxy'));
+            console.log(makeAbba("Hi", "Bye"));
+            console.log(makeAbba("What", "Up"));
+            console.log(makeAbba("Yo", "Alice"));
         </script>
     </body>
 </html>
