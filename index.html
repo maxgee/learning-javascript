@@ -4,12 +4,24 @@
     </head>
     <body>
         <script>
-            function firstHalf(stringA){
-                return stringA.substr(0,stringA.length/2);
+            function mirrorCheck(stringA){
+                var stringLength = stringA.length-1;
+                var CharCount = stringLength;
+                var mirrorText = "";
+                while(CharCount >= 0){
+                    mirrorText += stringA[CharCount];
+                    CharCount -= 1;
+                }
+                if(stringA === mirrorText){
+                    return true;
+                }
+                else{
+                    return false;
+                }
             }
-            console.log(firstHalf("WooHoo"));
-            console.log(firstHalf("HelloThere"));
-            console.log(firstHalf("abcdef"));
+            console.log(mirrorCheck("bob"));
+           console.log(mirrorCheck("dad"));
+            console.log(mirrorCheck("racecar"));
         </script>
     </body>
 </html>
