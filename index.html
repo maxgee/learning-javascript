@@ -2,26 +2,36 @@
     <head>
         <title> My First Javascript Page </title>
     </head>
-    <body>
+    <body onload="greetings();"style="text-align:center;">
         <script>
-            function mirrorCheck(stringA){
-                var stringLength = stringA.length-1;
-                var CharCount = stringLength;
-                var mirrorText = "";
-                while(CharCount >= 0){
-                    mirrorText += stringA[CharCount];
-                    CharCount -= 1;
-                }
-                if(stringA === mirrorText){
-                    return true;
-                }
-                else{
-                    return false;
-                }
-            }
-            console.log(mirrorCheck("bob"));
-           console.log(mirrorCheck("dad"));
-            console.log(mirrorCheck("racecar"));
-        </script>
+        function greetings(){
+            document.getElementById("greetingsbar").innerHTML = "<h1>Hello!</h1>";
+        }
+        function alertGreeting(){
+            var greetingElement = document.getElementById('inputBox').value;
+            alert(greetingElement);
+        }
+</script>
+    <div id="greetingsbar"></div>
+    <form>
+        <input type="text" placeholder="Message" id="inputBox" />
+        <input type="button" value="Send It!" onclick="alertGreeting();"/>
+    </form>
+    <table>
+        <tr>
+            <th>Year</th>
+            <th>Amount</th>
+        </tr>
+        <tbody>
+            <tr>
+                <td>2017</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>2016</td>
+                <td>4000</td>
+            </tr>
+        </tbody>
+    </table>
     </body>
 </html>
