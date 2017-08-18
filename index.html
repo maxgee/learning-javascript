@@ -2,30 +2,23 @@
     <head>
         <title> My First Javascript Page </title>
     </head>
-    <body onload="output();"style="text-align:center;">
+    <body style="text-align:center;">
         <script>
-        var car = {
-            make:"Jeep",
-            model:"Wrangler",
-            color:"Black",
-            state: false,
-            start: function(){
-                this.state = true;
-            },
-            stop: function(){
-                this.state = false;
-            },
-            drive: function(){
-                if(this.state === true)
-                    console.log("vroom!!!!");
-                else
-                    console.log("you must start the car!");
+        var person = {
+            name: "Billy",
+            age:38,
+            kids:[
+                {name:"Sam",
+                age:10,
+                gender: "boy"},
+                {name:"Tam",
+                age:18,
+                gender: "girl"},
+            ],
+            celebrateBirthday: function(){
+                this.age++;
             },
         }
-        function output(){
-            document.getElementById("texthere").innerHTML = "You have a "+car.color+" "+car.make+" "+car.model;
-        }
-</script>
-    <div id="texthere"></div>
+        </script>
     </body>
 </html>
