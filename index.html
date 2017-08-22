@@ -4,24 +4,18 @@
     </head>
     <body style="text-align:center;">
         <script>
-        var person = {
-            name: "Billy",
-            age:38,
-            kids:[
-                {name:"Sam",
-                age:10,
-                gender: "boy"},
-                {name:"Tam",
-                age:18,
-                gender: "girl"},
-            ],
-            celebrateBirthday: function(){
-                this.age++;
-            },
-            celebrateKidsBirthday: function(kidNum){
-                this.kids[kidNum].age ++;
-            },
+        //sum(1,2);
+
+        var sum = function(a,b){
+            console.log(a + b);
         }
+        var product = function(a,b){
+            console.log(a*b);
+        }
+        function doSomething(a,b,c){
+            c(a,b);
+        }
+        doSomething(1,2,sum);
         </script>
     </body>
 </html>
