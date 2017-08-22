@@ -4,18 +4,21 @@
     </head>
     <body style="text-align:center;">
         <script>
-        //sum(1,2);
-
-        var sum = function(a,b){
-            console.log(a + b);
+        function Person(name,age){
+        this.name = name;
+        this.age = age;
+        this.kid = [];
         }
-        var product = function(a,b){
-            console.log(a*b);
+        Person.prototype.bDay = function(){
+            this.age++;
         }
-        function doSomething(a,b,c){
-            c(a,b);
+        Person.prototype.newKid = function(name){
+            this.kid.push(name);
         }
-        doSomething(1,2,sum);
+        var max = new Person("Max", 20);
+        var bob = new Person("Bob", 40);
+        bob.newKid(max);
+        var tim = new Person("Tim",10);
         </script>
     </body>
 </html>
