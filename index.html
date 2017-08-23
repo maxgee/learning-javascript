@@ -4,21 +4,25 @@
     </head>
     <body style="text-align:center;">
         <script>
-        function Person(name,age){
-        this.name = name;
-        this.age = age;
-        this.kid = [];
+        function Car (make,model){
+            this.make = make;
+            this.model = model;
+            this.started = false;
         }
-        Person.prototype.bDay = function(){
-            this.age++;
+        Car.prototype.start = function(){
+            this.started = true;
         }
-        Person.prototype.newKid = function(name){
-            this.kid.push(name);
+        Car.prototype.stop = function(){
+            this.started = false;
         }
-        var max = new Person("Max", 20);
-        var bob = new Person("Bob", 40);
-        bob.newKid(max);
-        var tim = new Person("Tim",10);
+        Car.prototype.drive = function(){
+            if(this.started === true)
+                console.log("vroom!!");
+            else
+                console.log("you must start the car!");
+            
+        }
+        var wrangler = new Car("Jeep","Wrangler");
         </script>
     </body>
 </html>
