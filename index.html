@@ -4,25 +4,13 @@
     </head>
     <body style="text-align:center;">
         <script>
-        function Car (make,model){
-            this.make = make;
-            this.model = model;
-            this.started = false;
+        function lessByTen(a,b,c){
+           if(a - b >=10 || b - c >= 10 || a - c >= 10 || b - a >= 10|| c - b >= 10|| c - a >= 10){
+               return true
+           }else{
+               return false
+           }
         }
-        Car.prototype.start = function(){
-            this.started = true;
-        }
-        Car.prototype.stop = function(){
-            this.started = false;
-        }
-        Car.prototype.drive = function(){
-            if(this.started === true)
-                console.log("vroom!!");
-            else
-                console.log("you must start the car!");
-            
-        }
-        var wrangler = new Car("Jeep","Wrangler");
         </script>
     </body>
 </html>
