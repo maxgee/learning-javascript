@@ -3,13 +3,23 @@
         <title> My First Javascript Page </title>
     </head>
     <body style="text-align:center;">
-        <script>
-        function nearTen(num){
-            if(num % 10 <= 2 || num % 10 >= 8)
-                return true
-            else
-                return false
-        }
-        </script>
+        <p style="background-color: red;color:white;"> 
+            Has some text<br>
+        </p>
+    <script>
+        addEventListener("keydown", function(e){
+            console.log("key "+ e.keyCode+ " pressed!");
+            var par = document.querySelector("p");
+            par.innerHTML += "Key "+ e.keyCode+ " Pressed! <br>";
+            if(e.keyCode === 8){
+                par.innerHTML = "";
+            }
+            }
+        )
+        var par = document.querySelector("p");
+        par.addEventListener("mouseover", function(){
+            console.log("mouse over deteced!");
+        })
+    </script>
     </body>
 </html>
