@@ -2,16 +2,61 @@
     <head>
         <title> My First Javascript Page </title>
     </head>
-    <body style="text-align:center;">
-        <p id="cords"> </p>
+    <body>
+        <h1>Countries</h1>
+        <input type="text" placeholder="New country" id="add"/> <input type="button" value="Add" onclick="addToArray()"/><br>
+        <div id="editDiv"></div>
+        <div id="form"></div>
     <script>
-    addEventListener("mousemove",printCords);
-    
-    function printCords(e){
-        var cordElem = document.getElementById("cords");
-        cordElem.innerHTML = `<h1>Mouse is a X = ${e.x}, Y = ${e.y}</h1>`;
-        document.body.style.color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+    var countriesArray = ["USA","Merica'"];
+    function addToArray(){
+        //Gets Country Value
+        var country = document.getElementById("add").value
+        //Adds Country to Array
+        countriesArray.push(country);
+        //Display Table
+        showTable();
     }
+     //Delete Country Function
+    function deleteCountry(countryNum){
+        countriesArray.splice(countryNum,1);
+        showTable();
+    }
+    function editCountry(countryNum){
+        document.getElementById("editDiv").innerHTML = 
+        `<br><input type="text" value="${countriesArray[countryNum]}" id="updateCountryVal"/> 
+        <input type="button" value="Add" onclick="updateCountry()"/>
+        <input type="hidden" id="hiddenIndex" value="${countryNum}"/>
+        `;
+    }
+    function updateCountry(countryName){
+        var indexNum = document.getElementById("hiddenIndex").value;
+        countriesArray[indexNum] = document.getElementById("updateCountryVal").value;
+        showTable();
+         document.getElementById("editDiv").innerHTML = "";
+    }
+    
+    function showTable(){
+        //Gets Count on Array
+        var countryCount = countriesArray.length;
+
+        //Puts Table Together
+        var tableData = `<table><thead><tr><th>Name</th><th>${countryCount}</th></thead></tr><tbody>`
+        document.getElementById("form").innerHTML = tableData;
+        for(i = 0; i < countryCount; i++){
+            tableData += 
+            `<tr>
+                <td>${countriesArray[i]}</td>
+                <td><input type="button" value="Edit" onclick="editCountry(${i})"/></td>
+                <td><input type="button" value="Delete" onclick="deleteCountry(${i})"/></td>
+            </tr>`;
+        }
+        tableData += `</tbody></table>`;
+
+        //Outputs Table
+        document.getElementById("form").innerHTML = tableData;
+        }
+
     </script>
     </body>
 </html>
