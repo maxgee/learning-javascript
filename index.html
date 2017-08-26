@@ -3,23 +3,15 @@
         <title> My First Javascript Page </title>
     </head>
     <body style="text-align:center;">
-        <p style="background-color: red;color:white;"> 
-            Has some text<br>
-        </p>
+        <p id="cords"> </p>
     <script>
-        addEventListener("keydown", function(e){
-            console.log("key "+ e.keyCode+ " pressed!");
-            var par = document.querySelector("p");
-            par.innerHTML += "Key "+ e.keyCode+ " Pressed! <br>";
-            if(e.keyCode === 8){
-                par.innerHTML = "";
-            }
-            }
-        )
-        var par = document.querySelector("p");
-        par.addEventListener("mouseover", function(){
-            console.log("mouse over deteced!");
-        })
+    addEventListener("mousemove",printCords);
+    
+    function printCords(e){
+        var cordElem = document.getElementById("cords");
+        cordElem.innerHTML = `<h1>Mouse is a X = ${e.x}, Y = ${e.y}</h1>`;
+        document.body.style.color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+    }
     </script>
     </body>
 </html>
